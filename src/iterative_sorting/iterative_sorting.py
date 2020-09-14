@@ -69,6 +69,26 @@ data. The idea behind this algorithm then is that we can create "buckets" from 0
 Each buckets[i] then is responsible for keeping track of how many times  we've seen `i` in the input set of data as we iterate through it. Once we know exactly how many times each piece of data in the input set showed up, we can construct a sorted set of the input data from the buckets. 
 
 What is the time and space complexity of the counting sort algorithm?
+If given array and maximum:
+    time complexity:
+        counting each occurance in array -> O(n)
+        going from 0 to max range -> O(n-max range + 1) -> O(m)
+        total -> O(n) + O(m) -> O(n + m)
+    
+    space complexity:
+        have 2 arrays of length n and max range + 1 -> n, m
+        total -> O(n + m)
+        
+
+If given array without maximum:
+    time complexity:
+        finding maximum value in array -> O(n)
+        counting each occurance in array -> O(n)
+        going from 0 to max range -> O(n-max range + 1) -> O(m)
+        total -> O(n) + O(n) + O(m) -> O(2n + m) -> O(n + m)
+
+    space complexity:
+        same as prev: O(n + m)
 '''
 def counting_sort(arr, maximum=None):
     if maximum and arr:
