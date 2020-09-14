@@ -64,20 +64,43 @@ STRETCH: implement the Counting Sort function below
 
 Counting sort is a sorting algorithm that works on a set of data where
 we specifically know the maximum value that can exist in that set of
-data. The idea behind this algorithm then is that we can create "buckets"
-from 0 up to the max value. This is most easily done by initializing an
-array of 0s whose length is the max value + 1 (why do we need this "+ 1"?).
+data. The idea behind this algorithm then is that we can create "buckets" from 0 up to the max value. This is most easily done by initializing an array of 0s whose length is the max value + 1 (why do we need this "+ 1"?).
 
-Each buckets[i] then is responsible for keeping track of how many times 
-we've seen `i` in the input set of data as we iterate through it.
-Once we know exactly how many times each piece of data in the input set
-showed up, we can construct a sorted set of the input data from the 
-buckets. 
+Each buckets[i] then is responsible for keeping track of how many times  we've seen `i` in the input set of data as we iterate through it. Once we know exactly how many times each piece of data in the input set showed up, we can construct a sorted set of the input data from the buckets. 
 
 What is the time and space complexity of the counting sort algorithm?
 '''
 def counting_sort(arr, maximum=None):
-    # Your code here
-
-
+    if maximum and arr:
+        max = maximum + 1
+    elif arr:
+        #if maximum is None need to find max value in the array
+        max_value = arr[0]
+        for i in range(len(arr)):
+            if arr[i] > max_value:
+                max_value = arr[i]
+        max = max_value + 1
+    else:
+        return arr
+    #creates an empty array with maximum value in array + 1
+    count = [0] * max
+    #for each number in the array passed in
+    for num in arr:
+        #if number is negative return an error string
+        if num < 0:
+            return "Error, negative numbers not allowed in Count Sort"
+        else:
+            #count the number of occurances of that number in the array
+            #keep track of count of occurances in the count array
+            count[num] += 1
+    #start at index 0
+    index = 0
+    #from 0 to the max
+    for n in range(max):
+        #check if the current n value at the index in count is greater than 1
+        for number in range(count[n]):
+            #if it is add the index number of the element in count to the array at the index location
+            arr[index] = n
+            index += 1
+    
     return arr
