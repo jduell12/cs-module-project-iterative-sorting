@@ -8,7 +8,12 @@ Linear Search - O(log n)
 
 """
 def linear_search(arr, target):
-    
+    current_idx = 0
+    while current_idx <= len(arr) -1:
+        if arr[current_idx] == target:
+            return current_idx
+        else:
+            current_idx += 1
 
 
     return -1   # not found
