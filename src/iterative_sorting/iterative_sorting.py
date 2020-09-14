@@ -42,8 +42,20 @@ Bubble Sort - O(n^2)
 """
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-
-    
+    #initialize swap count 
+    swapCount = 1
+    #loop through the array until you stop swapping elements
+    while swapCount > 0:
+        #reset swap count
+        swapCount = 0
+        #loop through array from the beginning
+        for i in range(0, len(arr)-1):
+            #if an element to the right of the current element is less than the current element
+            if arr[i] > arr[i+1]:
+                #swap the elements
+                arr[i], arr[i+1] = arr[i+1], arr[i]
+                #increment the swap count to reflect swap
+                swapCount += 1
 
     return arr
 
