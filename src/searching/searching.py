@@ -1,8 +1,3 @@
-def linear_search(arr, target):
-    # Your code here
-
-
-    return -1   # not found
 """
 Linear Search - O(log n)
 
@@ -12,30 +7,12 @@ Linear Search - O(log n)
 4. Otherwise go to next index. If next index is out of bounds return -1 
 
 """
-
-
-# Write an iterative implementation of Binary Search
-def binary_search(arr, target):
-    #keep track of left and right edges
-    left = 0
-    right = len(arr) - 1
+def linear_search(arr, target):
     
-    while left <= right:
-        #find midpoint element 
-        # length // 2 (integer division - no floats after division)
-        midpoint = ((right + left) //2)
-        #check if midpoint
-        if arr[midpoint] == target:
-            return midpoint
-        elif arr[midpoint] < target:
-            #toss out the left side of the array by changing left variable
-            # add 1 to midpoint since we know the midpoint is not the target so we don't need to include it
-            left = midpoint + 1
-        else:
-            #toss out the right side of the array without including the midpoint element
-            right = midpoint - 1 
-            
-    return -1  # not found
+
+
+    return -1   # not found
+
 
 """
 Binary Search - O(log n)
@@ -82,3 +59,26 @@ target: 55
     - return index aka 7
 
 """
+# Write an iterative implementation of Binary Search
+def binary_search(arr, target):
+    #keep track of left and right edges
+    left = 0
+    right = len(arr) - 1
+    
+    while left <= right:
+        #find midpoint element 
+        # length // 2 (integer division - no floats after division)
+        midpoint = ((right + left) //2)
+        #check if midpoint
+        if arr[midpoint] == target:
+            return midpoint
+        elif arr[midpoint] < target:
+            #toss out the left side of the array by changing left variable
+            # add 1 to midpoint since we know the midpoint is not the target so we don't need to include it
+            left = midpoint + 1
+        else:
+            #toss out the right side of the array without including the midpoint element
+            right = midpoint - 1 
+            
+    return -1  # not found
+
