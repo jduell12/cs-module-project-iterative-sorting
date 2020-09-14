@@ -1,27 +1,36 @@
+"""
+Selection sort - O(n^2)
+
+1. Current boundary start at 0
+2. Find the smallest element in the array and move it to the front 
+3. Swap the element to where we know it's supposed to go
+4. Increment current boundry to 1 and repeat 
+5. When current boundry > length(arr) - 1 return  the sorted array
+
+Runtime Complexity:
+    walking the boundry from one end to the other: O(n)
+    finding the smallest element: O(n)
+    total = O(n) * O(n) 
+          = O(n^2)
+"""
+
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
-    # loop through n-1 elements
-    for i in range(0, len(arr) - 1):
-        cur_index = i
-        smallest_index = cur_index
-        # TO-DO: find next smallest element
-        # (hint, can do in 3 loc)
-        # Your code here
-        for j in range(cur_index+1, len(arr)-1):
-            if i < smallest_index:
-                 # TO-DO: swap
-                smallest_index = i 
-
-       
-        # Your code here
-
+    
     return arr
 
+"""
+Bubble Sort - O(n^2)
 
+1. Compare elements that are next to one another
+2. If right element is less than left element swap elements 
+3. Keep swapping until you go through array and don't need to swap any elements 
+4. Return the sorted array
+"""
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    # Your code here
 
+    
 
     return arr
 
