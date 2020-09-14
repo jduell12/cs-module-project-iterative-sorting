@@ -16,12 +16,19 @@ Runtime Complexity:
 
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
-    for i in range(0, len(arr)):
+    for i in range(0, len(arr)-1):
+        #current boundry starts at 0
+        curr_bound = i
+        #set smallest element to first element at the current boundry
         smallest_index = i
-        for j in range(i+1, len(arr)):
+        #loop through rest of the array
+        for j in range(curr_bound, len(arr)):
+            #if find an element that is smaller than the element at the current smallest index
             if arr[j] < arr[smallest_index]:
+                #swap the index 
                 smallest_index = j
-        arr[i], arr[smallest_index] = arr[smallest_index], arr[i]
+        #swap the current boundy with the smallest index 
+        arr[curr_bound], arr[smallest_index] = arr[smallest_index], arr[curr_bound]
         
     return arr
 
